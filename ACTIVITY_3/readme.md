@@ -57,7 +57,7 @@ The call stack acts like a **stack of plates** — each recursive call pushes a 
 
 ## III. Sample Code
 
-📄 **[Click here to view directory_size_calculator.py](sample_coder.py)**
+📄 **[Click here to view directory_size_calculator.py](sample_code.py)**
 
 The code implements a recursive function `calculate_size(path)` that:
 
@@ -67,3 +67,32 @@ The code implements a recursive function `calculate_size(path)` that:
 📸 **[View Test Results & Screenshots (PDF)](test_result_screenshot.pdf)**
 
 > ✅ **Test Result:** I tested this code on my Downloads folder, and the output matched exactly with what Windows shows in the folder Properties dialog.
+
+---
+
+## IV. Personal Insights
+
+What I learned from doing this activity:
+
+I honestly thought recursion was just a *"math trick"* for solving puzzles like Fibonacci or factorials. But when I researched file system traversal, I realized that recursion is actually **how computers naturally process hierarchical structures**. The folder-inside-folder-inside-folder structure is infinite by nature — you never know how deep it goes — so a loop alone can't easily handle it without manually tracking a stack. **Recursion does it automatically.**
+
+What became clearer to me is the **call stack**. I always knew recursion used the stack, but I never truly visualized how each call gets *"paused"* while it waits for its recursive children to finish. The directory size example makes this super intuitive — each folder waits for all its subfolders and files to *"report back"* before it can compute its own total.
+
+This taught me that for any problem involving **nested structures** (like JSON parsing, website DOM traversal, or even social media friend graphs), recursion is often the cleanest, most natural solution. It also made me realize the importance of a **well-defined base case** — without it, the function would infinitely recurse and crash.
+
+I can definitely see myself using recursion in future projects like:
+- Building a **file explorer app**
+- Creating a **website crawler**
+- Analyzing **dependency trees** in a package manager
+
+---
+
+## V. References
+
+1. GeeksforGeeks. **"Recursion."** *GeeksforGeeks*. https://www.geeksforgeeks.org/recursion/
+2. Python Documentation. **"os.path — Common pathname manipulations."** *Python Software Foundation*. https://docs.python.org/3/library/os.path.html
+3. Real Python. **"Python Recursion: A Complete Guide."** *Real Python*. https://realpython.com/python-recursion/
+
+---
+
+**Made with ❤️ for CPEPRO8L Recursion Research Activity**
