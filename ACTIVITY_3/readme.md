@@ -57,4 +57,13 @@ The call stack acts like a **stack of plates** — each recursive call pushes a 
 
 ## III. Sample Code
 
-[sample_code.py](sample_code.py)
+📄 **[Click here to view directory_size_calculator.py](sample_coder.py)**
+
+The code implements a recursive function `calculate_size(path)` that:
+
+- **Base case:** Returns file size if path is a file
+- **Recursive case:** Sums sizes of all entries if path is a directory
+
+📸 **[View Test Results & Screenshots (PDF)](test_result_screenshot.pdf)**
+
+> ✅ **Test Result:** I tested this code on my Downloads folder, and the output matched exactly with what Windows shows in the folder Properties dialog.
