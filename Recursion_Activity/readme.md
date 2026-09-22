@@ -8,5 +8,4 @@ If the length of the parameter is equal to one, it will return True, since a sin
 
 ### 3. What would happen if you removed the base case? (You can test it!)
 
-The function will be executed an infinite amount of times, but the terminal will terminate it until a limit amount of times
-
+The function would continue executing recursively without stopping. Eventually, the terminal would terminate the program after it reaches the maximum recursion limit.
