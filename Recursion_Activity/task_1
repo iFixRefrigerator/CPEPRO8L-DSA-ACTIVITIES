@@ -4,3 +4,5 @@ def reverse(s):
     return reverse(s[1:]) + s[0]
 
 print(reverse("hello"))
+print(reverse("python"))
+print(reverse("a"))
