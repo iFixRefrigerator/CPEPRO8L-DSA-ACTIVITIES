@@ -5,7 +5,7 @@ If the length of the parameter is equals to one, the value will be returned
 
 ### 2. What is the base case of your is_palindrome function?
 ```
-
+If the length of the parameter is equals to one, it will return True, since for it to be a palindrome it needs an odd length of characters
 ```
 
 ### 3. What would happen if you removed the base case? (You can test it!)
