@@ -1,11 +1,12 @@
 def is_palindrome(value):
-    message = "".join(reversed(value))
-
-    if value == message:
+    if len(value) == 1:
         return True
-    else:
+    
+    if value[0] != value[-1]:
         return False
 
-print(is_palindrome("madam"))
-print(is_palindrome("racecar"))
-print(is_palindrome("hello"))
+    return is_palindrome(value[1:-1])
+
+print(is_palindrome("madam")) 
+print(is_palindrome("racecar")) 
+print(is_palindrome("hello")) 
