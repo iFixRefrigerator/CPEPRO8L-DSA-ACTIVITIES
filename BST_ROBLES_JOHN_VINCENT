@@ -1,0 +1,142 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    # [1] Insert a Number
+    def insert(self, data):
+        if self.root is None:
+            self.root = Node(data)
+            return
+
+        current = self.root
+
+        while True:
+            if data < current.data:
+                if current.left is None:
+                    current.left = Node(data)
+                    return
+                current = current.left
+
+            elif data > current.data:
+                if current.right is None:
+                    current.right = Node(data)
+                    return
+                current = current.right
+
+            else:
+                return
+
+    # [2] Display All (Sorted / In-Order)
+    def inorder(self, node):
+        if node is not None:
+            self.inorder(node.left)
+            print(node.data, end=" ")
+            self.inorder(node.right)
+
+    def display_all(self):
+        print("In-Order (Sorted):", end=" ")
+
+        if self.root is None:
+            print("Tree is empty.")
+        else:
+            self.inorder(self.root)
+            print()
+
+    # [3] Search for a Number
+    def search(self, data):
+        current = self.root
+
+        while current is not None:
+            if data == current.data:
+                return True
+
+            elif data < current.data:
+                current = current.left
+
+            else:
+                current = current.right
+
+        return False
+
+    # [4] Display Minimum & Maximum Values
+    def get_minimum(self):
+        if self.root is None:
+            return None
+
+        current = self.root
+
+        while current.left is not None:
+            current = current.left
+
+        return current.data
+
+    def get_maximum(self):
+        if self.root is None:
+            return None
+
+        current = self.root
+
+        while current.right is not None:
+            current = current.right
+
+        return current.data
+
+
+# ==============================
+# Main Program
+# ==============================
+
+bst = BinarySearchTree()
+
+while True:
+    print("\n=================================")
+    print("--- BINARY SEARCH TREE SYSTEM ---")
+    print("[1] Insert a Number")
+    print("[2] Display All (Sorted / In-Order)")
+    print("[3] Search for a Number")
+    print("[4] Display Minimum & Maximum Values")
+    print("[5] Exit")
+    print("=================================")
+
+    choice = input("Select option (1-5): ")
+
+    if choice == "1":
+        number = int(input("Enter a number to insert: "))
+
+        bst.insert(number)
+        print(f"Inserted {number}.")
+
+    elif choice == "2":
+        bst.display_all()
+
+    elif choice == "3":
+        number = int(input("Enter a number to search: "))
+
+        if bst.search(number):
+            print("Found")
+        else:
+            print("Not Found")
+
+    elif choice == "4":
+        minimum = bst.get_minimum()
+        maximum = bst.get_maximum()
+
+        if minimum is None:
+            print("Tree is empty.")
+        else:
+            print(f"Minimum: {minimum}")
+            print(f"Maximum: {maximum}")
+
+    elif choice == "5":
+        print("Exiting program. Goodbye!")
+        break
+
+    else:
+        print("Invalid option. Please select 1-5.")
